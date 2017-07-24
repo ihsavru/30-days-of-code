@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parallax</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+		@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+		body, html {
+		    height: 100%;
+		    padding: 10px;
+		    font-family: 'Poiret One', cursive;
+		}
+		.parallax{
+			background-image: url("bg1.jpg");
+			opacity: 0.8;
+			height: 100%;
+			background-attachment: fixed;
+			background-position: center;
+			background-size: cover;
+		}
+		#two{
+			background-image: url("bg2.jpg");
+			height: 70%;
+		}
+		#three{
+			background-image: url("bg3.jpg");
+		}
+		.text{
+			position: relative;
+			top: 50%;
+			transform: translate(0,-50%);
+			text-align: center;
+			width: 150px;
+			padding: 10px;
+			background-color: rgba(255,255,255,0.9);
+			color: black;
+			margin: 0 auto;
+		}
+		.tut{
+			text-align: center;
+			background-color: rgb(102, 91, 91);
+			color: white;
+			padding: 10px;
+		}
+		span{
+			background-color: white;
+			color: black;
+			font-family: 'Inconsolata', monospace;
+		}
+		a{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="tut">
+		<h1>DAY-1</h1>
+		<p>21 July 2017</p>
+	</div>
+	<div class="parallax">
+		<div class="text"><h2>SCROLL DOWN</h2></div>
+	</div>
+	<div class="parallax" id="two">
+		<div class="text"><h2>PARALLAX</h2></div>
+	</div>
+	<div class="tut">
+		<h2>THE PARALLAX EFFECT</h2>
+		<p>Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+		<p>To achieve this effect, we set the <span>background-attachment : fixed;</span> so that it does not scroll with the rest of the page. <a href="https://www.w3schools.com/howto/howto_css_parallax.asp">Click here for more.</a></p>
+	</div>
+	<div class="parallax" id="three">
+		<div class="text"><h2>THE END</h2></div>
+	</div>
+</body>
+</html>

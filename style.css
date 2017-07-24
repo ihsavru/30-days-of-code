@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Electrolize|Wallpoet");
+* {
+  box-sizing: border-box; }
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0; }
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Wallpoet', cursive; }
+
+.page-header {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.6); }
+
+.front {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+  .front h1 {
+    color: rgba(255, 255, 255, 0.8); }
+  .front h2 {
+    font-family: 'Electrolize', sans-serif; }
+  .front a, .front i {
+    color: white; }
+  .front i {
+    font-size: 3vh;
+    cursor: pointer; }
+
+.intro {
+  color: #8c6b6b;
+  padding: 10vw;
+  font-family: 'Electrolize', sans-serif; }
+
+.calender {
+  padding: 10vw;
+  background: linear-gradient(white, #ffe8e8); }
+  .calender a {
+    color: #f20060; }
+
+.description h2 {
+  color: #33add6; }
+.description h4 {
+  font-family: 'Electrolize', sans-serif;
+  padding-right: 20vw; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paper Cut Out Effect</title>
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+    @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+        body,html{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #ffbb00;
+            font-family: 'Alfa Slab One', cursive;
+            font-size: 10vw;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+        }
+        .top{
+            position: absolute;
+            color: #ffbb00;
+            left: 40%;
+            top: 40%;
+            margin: auto;
+            transform-origin: 0 100%;
+            text-shadow: 10px 10px 10px rgba(86,65,0,0.4);
+            transform: skew(0deg,-10deg);
+            perspective: 100px;
+        }
+        .top:hover{
+            animation: up 500ms;
+            cursor: pointer;
+        }
+        @keyframes up{
+            30%{
+                transform: skew(0deg,-15deg);
+                text-shadow: 14px 12px 8px rgba(86,65,0,0.4);
+            }
+            50%{
+                transform: skew(0deg,-8deg);
+                text-shadow: 10px 8px 12px rgba(86,65,0,0.4);
+            }
+            70%{
+                transform: skew(0deg,-13deg);
+                text-shadow: 14px 11px 8px rgba(86,65,0,0.4);
+            }
+            100%{
+                transform: skew(0deg,-10deg);
+                text-shadow: 10px 10px 10px rgba(86,65,0,0.4);
+            }
+        }
+        .base{
+            color: #820e25;
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            margin: auto;
+        }
+        #h{
+            left: 10vw;
+        }
+        #o{
+            left: 25vw;
+        }
+        #v{
+            left: 40vw;
+        }
+        #e{
+            left: 55vw;
+        }
+        #r{
+            left: 70vw;
+        }
+        #exc{
+            left: 85vw;
+        }
+        .day, .description, .back{
+            position: absolute;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 20px;
+            left: 50%; 
+            font-family: 'Poiret One', cursive;
+            color:  #ffbb00;
+            padding-right: 30px;
+            padding-left: 30px;
+            margin: 10px;
+            background-color: black;
+        }
+        .description{
+            bottom: 10px;
+        }
+        a{
+            color:  #ffbb00;
+            text-decoration: none;
+        }
+        .back{
+            left: 0;
+            font-size: 50px;
+            border-radius: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back"><a href="javascript:history.back()"><strong><</strong></a></div>
+    <div class="day"><h1>DAY 3</h1><h3>23 JULY 2017</h3></div>
+    <div>
+        <div class="base" id="h">H</div>
+        <div class="base" id="o">O</div>
+        <div class="base" id="v">V</div>
+        <div class="base" id="e">E</div>
+        <div class="base" id="r">R</div>
+        <div class="base" id="exc">!</div>
+    </div>
+    <div>
+        <div class="top" id="h">H</div>
+        <div class="top" id="o">O</div>
+        <div class="top" id="v">V</div>
+        <div class="top" id="e">E</div>
+        <div class="top" id="r">R</div>
+        <div class="top" id="exc">!</div>
+    </div>
+    <div class="description">  
+        <h1>PAPER CUT-OUT EFFECT</h1>
+        <h4>Each letter is made out of a base and a top. So, we have two letters stacked on top of each other. The top letter or layer is skewed along the Y-axis to give it the 'paper cut-out effect' and given a shadow. On hover, animation is added which changes the skewing degree along the Y-axis and the respective position of their shadows</h4>
+        <h3><a href="https://www.youtube.com/watch?v=Sdmi-w-YsrY">SOURCE</a></h3>
+    </div>
+</body>
+</html>
