@@ -20,6 +20,9 @@ body {
   background-color: black;
   color: rgba(255, 255, 255, 0.6); }
 
+.links {
+  word-spacing: 1vw; }
+
 .front {
   text-align: center;
   position: absolute;
@@ -44,13 +47,14 @@ body {
 .calender {
   padding: 10vw;
   background: linear-gradient(white, #ffe8e8); }
-  .calender a {
-    color: #f20060; }
+  .calender h2 {
+    color: #f20060;
+    margin: 0; }
 
-.description h2 {
-  color: #33add6; }
 .description h4 {
   font-family: 'Electrolize', sans-serif;
   padding-right: 20vw; }
+.description h2 {
+  color: #33add6; }
 
 /*# sourceMappingURL=style.css.map */

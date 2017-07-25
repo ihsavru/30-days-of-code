@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>5-Twinkling stars</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+        body,html{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Poiret One', cursive;
+        }
+        body{
+            background: radial-gradient(#011a33,#000911,black);
+        }
+        div{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .stars1 > div{
+            position: absolute;
+            background-color: white;
+            width: 1px;
+            height: 1px;
+            box-shadow: 1px 1px 3px rgb(255, 216, 0);
+            animation: twinkle 1.5s infinite;
+        }
+        .stars2 > div{
+            position: absolute;
+            background-color: white;
+            width: 2px;
+            height: 2px;
+            box-shadow: 1px 1px 1px rgb(255, 0, 80);
+            animation: twinkle 2s infinite;
+        }
+        .stars3 > div{
+            position: absolute;
+            background-color: white;
+            width: 3px;
+            height: 3px;
+            box-shadow: 1px 1px 10px rgb(0, 203, 255);
+            animation: twinkle 5s infinite;
+            -webkit-animation: twinkle 5s infinite;
+            -moz-animation: twinkle 5s infinite;
+            -o-animation: twinkle 5s infinite;
+        }
+
+        @keyframes twinkle{
+            50%{
+                background-color: rgba(255,255,255,0.2);
+            }
+
+            100%{
+                background-color: rgba(255,255,255,1);
+            }
+        }
+        @-webkit-keyframes twinkle{
+            50%{
+                background-color: rgba(255,255,255,0.2);
+            }
+
+            100%{
+                background-color: rgba(255,255,255,1);
+            }
+        }
+        @-o-keyframes twinkle{
+            50%{
+                background-color: rgba(255,255,255,0.2);
+            }
+
+            100%{
+                background-color: rgba(255,255,255,1);
+            }
+        }
+        @-moz-keyframes twinkle{
+            50%{
+                background-color: rgba(255,255,255,0.2);
+            }
+
+            100%{
+                background-color: rgba(255,255,255,1);
+            }
+        }
+
+        .day, .source{
+            margin: auto;
+            background-color: #332b2b;
+            z-index: 101;
+            height: auto;
+            width: auto;
+            padding: 10px;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .source{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        a{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="day">
+        <h1>DAY 5</h1>
+        <h3>25 JULY 2017</h3>
+    </div>
+    <div class="stars1"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <div class="source"><a href="https://codepen.io/WebSonick/pen/vjmgu"><h3>INSPIRATION</h3></a></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            for(var i=0;i<200;i++){
+                a = window.innerWidth;
+                b = window.innerHeight;
+                x=Math.floor(Math.random()*a);
+                y=Math.floor(Math.random()*b);
+                $('.stars1').append("<div></div>");
+                console.log(x);
+                $('.stars1 > div').last().offset({
+                    left : x,
+                    top : y 
+                })
+            }
+
+            for(var i=0;i<150;i++){
+                a = window.innerWidth;
+                b = window.innerHeight;
+                x=Math.floor(Math.random()*a);
+                y=Math.floor(Math.random()*b);
+                $('.stars2').append("<div></div>");
+                $('.stars2 > div').last().offset({
+                    left : x,
+                    top : y 
+                })
+            }
+
+            for(var i=0;i<100;i++){
+                a = window.innerWidth;
+                b = window.innerHeight;
+                x=Math.floor(Math.random()*a);
+                y=Math.floor(Math.random()*b);
+                $('.stars3').append("<div></div>");
+                console.log(x);
+                $('.stars3 > div').last().offset({
+                    left : x,
+                    top : y 
+                })
+            }
+
+        })
+    </script>
+</body>
+</html>
