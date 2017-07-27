@@ -30,3 +30,8 @@ Stars twinkling in the background using jQuery.
 ### 26 July 2017
 #### 3D TEXT
 Typography effect to give text a 3rd dimension using multiple shadows. Also, how to outline text in a similar fashion.
+
+## DAY 7
+### 27 July 2017
+#### NEON TEXT
+It is what it sounds like, neon!
