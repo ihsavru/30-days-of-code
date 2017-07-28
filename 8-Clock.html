@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8-Clock</title>
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+        body,html{
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+            font-size: 30px;
+            overflow: hidden;
+        }
+        div{
+            text-align: center;
+            margin: 0 auto;
+            top: 30%;
+            position: relative;
+            padding: 0;
+        }
+        h1{
+            font-size: 5vw;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        setInterval(function(){
+            d = new Date();
+            $('#clock').html(d);
+            $('#clock').html(function(){
+                $date = "<h2>" + d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear() + "</h2>";
+                return $date;
+            });
+            $('#clock').append(function(){
+                $time = "<h1>" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "</h1>";
+                return $time;
+            });
+            days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            $('#clock').append(days[d.getDay()]);
+        },1000);
+    })
+</script>
+</html>

@@ -35,3 +35,8 @@ Typography effect to give text a 3rd dimension using multiple shadows. Also, how
 ### 27 July 2017
 #### NEON TEXT
 It is what it sounds like, neon!
+
+## DAY 8
+### 28 July 2017
+#### CLOCK
+Digital clock using JavaScript's date object.
