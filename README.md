@@ -40,3 +40,8 @@ It is what it sounds like, neon!
 ### 28 July 2017
 #### CLOCK
 Digital clock using JavaScript's date object.
+
+## DAY 9
+### 29 July 2017
+#### HTML5 AUDIO
+How to add background music to your websites using html5 audio.
