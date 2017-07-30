@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>10-Maximize</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+        body,html{
+            padding: 0;
+            margin: 0;
+            background-color: rgb(76, 255, 183);
+            font-size: 40px;
+        }
+        .window{
+            margin: 20vh;
+        }
+        .bottom{
+            margin: auto;
+            text-align: right;
+            padding: 10px;
+            width: 500px;
+            background-color: rgb(40, 46, 79);
+            color: #ffbabd;
+            letter-spacing: 5px;
+        }
+        i{
+            cursor: pointer;
+        }
+        .full{
+            margin: auto;
+            padding: 10px;
+            background-color: #ffbabd;
+            height: 0;
+            width: 500px;
+        }
+        .text{
+            opacity: 0;
+            color: #3a3a3a;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="window">
+        <div class="bottom">
+            <i id="minimize" class="fa fa-window-minimize" aria-hidden="true"></i>
+            <i id="maximize" class="fa fa-window-maximize" aria-hidden="true"></i>
+            <i id="close" class="fa fa-window-close-o" aria-hidden="true"></i>
+        </div>
+        <div class="full">
+            <dir class="text">
+                <h1>DAY 10</h1>
+                <h2>30 JULY 2017</h2>
+            </dir>
+        </div>
+    </div>
+    <script src="https://use.fontawesome.com/4687d61c54.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#maximize').on('click', function(){
+                $('.full').animate({
+                    height : '40vh'
+                });
+                $('.text').animate({
+                    opacity: '1'
+                })
+            });
+            $('#minimize').on('click', function(){
+                $('.full').animate({
+                    height : '0',
+                });
+                $('.text').animate({
+                    opacity: '0'
+                })
+            });
+            $('#close').on('click', function(){
+                $('.window').animate({
+                    opacity : '0'
+                });
+            });
+        })
+    </script>
+</body>
+</html>
