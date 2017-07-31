@@ -50,3 +50,8 @@ How to add background music to your websites using html5 audio.
 ### 30 July 2017
 #### MAXIMIZE-MINIMIZE
 Tab maximize, minimize and close effect!
+
+## DAY 11
+### 31 July 2017
+#### PARTICLES.JS
+A lightweight JavaScript library by Vincent Garreau for creating particles.
