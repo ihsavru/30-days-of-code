@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>12-Input-color</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+        body{
+            background-color: #c4ffe6;
+        }
+        .day{
+            position: absolute;
+            text-align: center;
+            font-family: 'Poiret One', cursive;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        button{
+            background-color: #4c4e70;
+            font-family: 'Poiret One', cursive;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="day">
+        Select a color: <input type="color" id="col">
+        <h1>DAY 12</h1>
+        <h2>1 AUGUST 2017</h2>
+        <button>CHANGE</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('button').on('click',function(){
+            var x = document.getElementById('col').value;
+        $('.day').css(
+            "color" , x
+        );
+        console.log(x);
+        })
+    </script>
+</body>
+</html>

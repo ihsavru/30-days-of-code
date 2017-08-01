@@ -55,3 +55,9 @@ Tab maximize, minimize and close effect!
 ### 31 July 2017
 #### PARTICLES.JS
 A lightweight JavaScript library by Vincent Garreau for creating particles.
+
+## DAY 12
+### 1 August 2017
+#### HTML5 DOM INPUT COLOR
+Color picker input object.
+
