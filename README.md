@@ -66,3 +66,7 @@ Color picker input object.
 #### BASIC CALCULATOR
 Basic calculator in JavaScript.
 
+## DAY 14
+### 3 August 2017
+#### SKETCHPAD
+A very very very basic sketchpad.

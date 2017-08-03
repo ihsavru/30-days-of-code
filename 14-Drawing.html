@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>14-Drawing</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var draw;
+			var canvas = document.getElementById('canvas');
+			canvas.height = window.innerHeight;
+			canvas.width = window.innerWidth;
+			$('canvas').on('mousedown', function(e){
+				draw =true;
+				var ctx = canvas.getContext('2d');
+				ctx.fillStyle = '#000000';
+				ctx.fillRect(e.pageX,e.pageY,20,20);
+			})
+			$('canvas').on('mousemove', function(e){
+				if(draw){
+					var ctx = canvas.getContext('2d');
+					ctx.fillStyle = '#000000';
+					ctx.fillRect(e.pageX,e.pageY,20,20);
+				}
+			})
+			$('canvas').mouseup(function(e){
+				draw = false;
+			});
+		})
+	</script>
+</body>
+</html>
