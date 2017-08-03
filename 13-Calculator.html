@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>13-CALCULATOR</title>
+    <style type="text/css">
+        .calculator{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        table{
+            width: 300px;
+            text-align: center;
+        }
+        input{
+            width: 300px;
+        }
+        td{
+            background-color: #bababa;
+            cursor: pointer;
+        }
+        td:active{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+    <p>0</p>
+    <input type="text" value="0">
+        <table>
+            
+            <tr>
+                <div >
+                    <td id="1" class="numbers">1</td>
+                    <td id="2" class="numbers">2</td>
+                    <td id="3" class="numbers">3</td>
+                </div>
+                <td id="add" class="operator">+</td>
+            </tr>
+            <tr>
+                <div class="numbers">
+                    <td id="4" class="numbers">4</td>
+                    <td id="5" class="numbers">5</td>
+                    <td id="6" class="numbers">6</td>
+                </div>
+                <td id="subtract" class="operator">-</td>
+            </tr>
+            <tr>
+                <div class="numbers">
+                    <td id="7" class="numbers">7</td>
+                    <td id="8" class="numbers">8</td>
+                    <td id="9" class="numbers">9</td>
+                </div>
+                <td id="eq" class="equals">=</td>
+            </tr>
+             <tr>
+                
+                    <td id="multiply" class="operator">*</td>
+                    <td id="0" class="numbers">0</td>
+                    <td id="divide" class="operator">/</td>
+                    <td id="clear" class="clear">C</td>
+                
+            </tr>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function cal(x1,x2,op){
+            if(op === 'add')
+                return x1 + x2;
+            if(op === 'subtract')
+                return x1 - x2;
+            if(op === 'multiply')
+                return x1 * x2;
+            if(op === 'divide')
+                return x1 / x2;
+        }
+        $(function(){
+            var result=0,x=0,counter=0,op,x1 = 0,x2 = 0;
+            $('td').on('click', function(){
+                x = $(this).attr('id');
+                if($(this).attr('class') === 'clear'){
+                    x1 =0;
+                    x2 =0;
+                    counter=0;
+                    result=0;
+                    $('p').html(result);
+                    $('input[type=text]').val(result);
+                }
+                if($(this).attr('class') === 'numbers')
+                    $('input[type=text]').val($('input[type=text]').val() + x);
+                if($(this).attr('class') === 'operator' || $(this).attr('class') === 'equals'){
+                    if(counter === 0)
+                        x1 = parseInt($('input[type=text]').val());
+                    else if(counter === 1){
+                        x2 = parseInt($('input[type=text]').val());
+                        x1 = cal(x1,x2,op);
+                        counter = 0;
+                    }
+                    $('p').html(result);
+                    counter++;
+                    if (x !== "eq")
+                    op = x;
+                    $('input[type=text]').val('');
+                    if($(this).attr('class') == 'equals'){
+                        result = x1;
+                        $('p').html(result);
+                        $('input[type=text]').val(result);
+                        x2 = 0;
+                        counter = 0;
+
+                    }
+                }
+                    
+            });
+        })
+    </script>
+</body>
+</html>
