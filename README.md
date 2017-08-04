@@ -70,3 +70,8 @@ Basic calculator in JavaScript.
 ### 3 August 2017
 #### SKETCHPAD
 A very very very basic sketchpad.
+
+## DAY 15
+### 4 August 2017
+#### GLITCH
+Glitchy text using css animations.

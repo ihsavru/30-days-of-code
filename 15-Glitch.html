@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>15-Glitch</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+        body{
+            background-color: black;
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 50px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .day{
+            position: relative;
+            margin:30vh auto;
+            -webkit-animation: glitch 300ms infinite;
+            -o-animation: glitch 300ms infinite;
+            -moz-animation: glitch 300ms infinite;
+            animation: glitch 300ms infinite;
+        }
+        span{
+            -webkit-animation: glitch2 500ms infinite;
+            -moz-animation: glitch2 500ms infinite;
+            -o-animation: glitch2 500ms infinite;
+            animation: glitch2 500ms infinite;
+        }
+        @-webkit-keyframes glitch{
+          0% {
+            text-shadow: 3px 1px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+          }
+          25% {
+            text-shadow: -3px -4px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+            opacity: 0.8;
+          }
+          50% {
+            text-shadow: 3px -2px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+            opacity: 0.5;
+            transform: translateX(5px);
+          }
+          75% {
+            text-shadow: -6px -2px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+            opacity: 0.6;
+            transform: translateY(-2px);
+          }
+          100% {
+            text-shadow: -3px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+            opacity: 1;
+          }
+        }
+        @-webkit-keyframes glitch2{
+          0% {
+            text-shadow: 3px 1px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+          }
+          25% {
+            text-shadow: -3px -4px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+            opacity: 0.8;
+          }
+          50% {
+            text-shadow: 3px -2px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+            opacity: 0;
+          }
+          75% {
+            text-shadow: -6px -2px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+            opacity: 0.6;
+          }
+          100% {
+            text-shadow: -3px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+            opacity: 1;
+          }
+        }
+        @-moz-keyframes glitch{
+          0% {
+            text-shadow: 3px 1px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+          }
+          25% {
+            text-shadow: -3px -4px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+            opacity: 0.8;
+          }
+          50% {
+            text-shadow: 3px -2px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+            opacity: 0.5;
+            transform: translateX(5px);
+          }
+          75% {
+            text-shadow: -6px -2px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+            opacity: 0.6;
+            transform: translateY(-2px);
+          }
+          100% {
+            text-shadow: -3px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+            opacity: 1;
+          }
+        }
+        @-moz-keyframes glitch2{
+          0% {
+            text-shadow: 3px 1px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+          }
+          25% {
+            text-shadow: -3px -4px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+            opacity: 0.8;
+          }
+          50% {
+            text-shadow: 3px -2px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+            opacity: 0;
+          }
+          75% {
+            text-shadow: -6px -2px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+            opacity: 0.6;
+          }
+          100% {
+            text-shadow: -3px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+            opacity: 1;
+          }
+        }
+        @-o-keyframes glitch{
+          0% {
+            text-shadow: 3px 1px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+          }
+          25% {
+            text-shadow: -3px -4px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+            opacity: 0.8;
+          }
+          50% {
+            text-shadow: 3px -2px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+            opacity: 0.5;
+            transform: translateX(5px);
+          }
+          75% {
+            text-shadow: -6px -2px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+            opacity: 0.6;
+            transform: translateY(-2px);
+          }
+          100% {
+            text-shadow: -3px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+            opacity: 1;
+          }
+        }
+        @-o-keyframes glitch2{
+          0% {
+            text-shadow: 3px 1px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+          }
+          25% {
+            text-shadow: -3px -4px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+            opacity: 0.8;
+          }
+          50% {
+            text-shadow: 3px -2px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+            opacity: 0;
+          }
+          75% {
+            text-shadow: -6px -2px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+            opacity: 0.6;
+          }
+          100% {
+            text-shadow: -3px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+            opacity: 1;
+          }
+        }
+        @keyframes glitch{
+          0% {
+            text-shadow: 3px 1px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+          }
+          25% {
+            text-shadow: -3px -4px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+            opacity: 0.8;
+          }
+          50% {
+            text-shadow: 3px -2px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+            opacity: 0.5;
+            transform: translateX(5px);
+          }
+          75% {
+            text-shadow: -6px -2px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+            opacity: 0.6;
+            transform: translateY(-2px);
+          }
+          100% {
+            text-shadow: -3px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+            opacity: 1;
+          }
+        }
+        @keyframes glitch2{
+          0% {
+            text-shadow: 3px 1px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+          }
+          25% {
+            text-shadow: -3px -4px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+            opacity: 0.8;
+          }
+          50% {
+            text-shadow: 3px -2px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+            opacity: 0;
+          }
+          75% {
+            text-shadow: -6px -2px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+            opacity: 0.6;
+          }
+          100% {
+            text-shadow: -3px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+            opacity: 1;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="day">
+        <h1>DAY 15</h1>
+        <h2>4 AUGUST 2017</h2>
+        <h3><span>Halfway</span> through!</h3>
+    </div>
+</body>
+</html>
