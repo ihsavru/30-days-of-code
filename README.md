@@ -75,3 +75,8 @@ A very very very basic sketchpad.
 ### 4 August 2017
 #### GLITCH
 Glitchy text using css animations.
+
+## DAY 16
+### 5 August 2017
+#### POPUP
+Popup on button click.
