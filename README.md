@@ -80,3 +80,8 @@ Glitchy text using css animations.
 ### 5 August 2017
 #### POPUP
 Popup on button click.
+
+## DAY 17
+### 6 August 2017
+#### BLUR
+Text blur effect using text-shadow property.
