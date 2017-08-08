@@ -90,3 +90,8 @@ Text blur effect using text-shadow property.
 ### 7 August 2017
 #### DROPDOWN MENU
 Menu drops down on button click.
+
+## DAY 19
+### 8 August 2017
+#### GOOGLE CHARTS
+Interactive charts and data tools.
