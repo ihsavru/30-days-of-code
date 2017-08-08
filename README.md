@@ -85,3 +85,8 @@ Popup on button click.
 ### 6 August 2017
 #### BLUR
 Text blur effect using text-shadow property.
+
+## DAY 18
+### 7 August 2017
+#### DROPDOWN MENU
+Menu drops down on button click.
