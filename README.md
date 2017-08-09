@@ -95,3 +95,8 @@ Menu drops down on button click.
 ### 8 August 2017
 #### GOOGLE CHARTS
 Interactive charts and data tools.
+
+## DAY 20
+### 9 August 2017
+#### TOOLTIP
+The Tooltip plugin is small pop-up box that appears when the user moves the mouse pointer over an element.
