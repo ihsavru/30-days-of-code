@@ -105,3 +105,8 @@ The Tooltip plugin is small pop-up box that appears when the user moves the mous
 ### 10 August 2017
 #### TRIANGLIFY.JS
 Algorithmically generated triangle art.
+
+## DAY 22
+### 11 August 2017
+#### IMAGE MAGNIFICATION
+Image magnification on hover.
