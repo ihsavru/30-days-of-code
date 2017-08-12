@@ -100,3 +100,8 @@ Interactive charts and data tools.
 ### 9 August 2017
 #### TOOLTIP
 The Tooltip plugin is small pop-up box that appears when the user moves the mouse pointer over an element.
+
+## DAY 21
+### 10 August 2017
+#### TRIANGLIFY.JS
+Algorithmically generated triangle art.

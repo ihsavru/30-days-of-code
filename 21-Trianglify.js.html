@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>21-Trianglify.js</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+        html,body{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .day, .description{
+            mix-blend-mode: lighten;
+            position: absolute;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 20px;
+            left: 50%; 
+            font-family: 'Poiret One', cursive;
+            color:  black;
+            padding-right: 30px;
+            padding-left: 30px;
+            margin: 10px;
+            background-color: rgba(255,255,255,0.7);
+        }
+        .description{
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="day"><h1>DAY 21</h1><h3>10 AUGUST 2017</h3></div>
+<div class="description">  
+        <h1>TRIANGLIFY.JS</h1>
+        <h4>algorithmically generated triangle art</h4>
+        <h3><a href="http://qrohlf.com/trianglify/">SOURCE</a></h3>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+<script type="text/javascript">
+    var pattern = Trianglify({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        cell_size: 60
+    });
+    document.body.appendChild(pattern.canvas());
+</script>
+</body>
+</html>
