@@ -110,3 +110,8 @@ Algorithmically generated triangle art.
 ### 11 August 2017
 #### IMAGE MAGNIFICATION
 Image magnification on hover.
+
+## DAY 23
+### 12 August 2017
+#### ELEGANT SHADOW
+Text shadow effect.
