@@ -115,3 +115,8 @@ Image magnification on hover.
 ### 12 August 2017
 #### ELEGANT SHADOW
 Text shadow effect.
+
+## DAY 24
+### 13 August 2017
+#### CARD FOLD DOWN
+Card Fold Down Effect with Dynamic Height.

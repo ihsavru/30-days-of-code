@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>24-Card-fold-down</title>
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+        body,html{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+            font-family: 'Press Start 2P', cursive;
+            color: #7a4a4a;
+        }
+        .desc{
+            width: 30vw;
+            text-align: center;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            perspective: 800px;
+        }
+        .day,.head{
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+        }
+        .head{
+            margin: 0;
+            padding: 20px;
+            transform-origin: top center;
+            transform: rotateX(-90deg);
+            backface-visibility: hidden;
+            visibility: hidden;
+            color: #6388a3;
+        }
+        .drop{
+            animation: dropdown 500ms forwards;
+        }
+        @keyframes dropdown{
+            100%{
+                transform: rotateX(0deg);
+                visibility: visible;
+            }
+        }
+        a{
+            color: #ff005d;
+        }
+    </style>
+</head>
+<body>
+    <div class="desc">
+        <div class="day">
+            <h1>DAY 24</h1>
+            <h2>13 AUGUST 2017</h2>
+            <h3>Hover over.</h3>
+        </div>
+        <div class="head">
+            <h2>Card Fold Down Effect with Dynamic Height</h2>
+            <a href="https://codepen.io/vajkri/pen/oxRwxy">SOURCE</a>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.day').on('mouseover',function(){
+                $('.head').addClass('drop')
+            })
+        })
+    </script>
+</body>
+</html>
