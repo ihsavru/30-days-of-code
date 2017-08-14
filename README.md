@@ -120,3 +120,8 @@ Text shadow effect.
 ### 13 August 2017
 #### CARD FOLD DOWN
 Card Fold Down Effect with Dynamic Height.
+
+## DAY 25
+### 14 August 2017
+#### TABS
+Tabs are a great way of grouping lots of content into a very small space.

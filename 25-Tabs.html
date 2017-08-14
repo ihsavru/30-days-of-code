@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>25-Tabs</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Poiret One', cursive;
+            background-image: linear-gradient(to right, #a8edea 0%, #fed6e3 100%);
+            font-size: 50px;
+        }
+        .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        button{
+            margin: 0;
+            border: none;
+            color: white;
+            background-color: #d8115a;
+            font-size: 50px;
+            padding: 20px;
+            font-family: 'Poiret One', cursive;
+        }
+        #text{
+            background-color: #86d3ef;
+            color: white;
+            padding: 10vh;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        #day{
+            background-color: #86d3ef;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <button id="day">Day</button>
+        <button id="date">Date</button>
+        <button id="topic">Topic</button>
+        <div id="text">DAY 25</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#day').on('click',function(){
+                $('#text').html("DAY 25");
+                $('button').css({
+                    'background-color' : '#d8115a'
+                });
+                $(this).css({
+                    'background-color' : '#86d3ef'
+                });
+            })
+            $('#date').on('click',function(){
+                $('#text').html("14 AUGUST 2017");
+                $('button').css({
+                    'background-color' : '#d8115a'
+                });
+                $(this).css({
+                    'background-color' : '#86d3ef'
+                });
+            })
+            $('#topic').on('click',function(){
+                $('#text').html("TABS");
+                $('button').css({
+                    'background-color' : '#d8115a'
+                });
+                $(this).css({
+                    'background-color' : '#86d3ef'
+                });
+            })
+        })
+    </script>
+</body>
+</html>
