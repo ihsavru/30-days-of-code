@@ -125,3 +125,8 @@ Card Fold Down Effect with Dynamic Height.
 ### 14 August 2017
 #### TABS
 Tabs are a great way of grouping lots of content into a very small space.
+
+## DAY 26
+### 15 August 2017
+#### PRELOADER
+Page preloader icon.
