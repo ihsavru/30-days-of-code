@@ -140,3 +140,8 @@ Accordions are useful when you want to toggle between hiding and showing large a
 ### 17 August 2017
 #### SIDE NAVIGATION BAR
 Navigation bar which slides in from left.
+
+## DAY 29
+### 18 August 2017
+#### ANIMATED SIGNATURE
+Animating Your Own SVG Signature.

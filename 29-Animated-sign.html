@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>29-Animated-sign</title>
+    <style type="text/css">
+     @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+        body,html{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+         }
+         .content{
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+         }
+         .day, .description{
+            position: absolute;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 20px;
+            left: 50%; 
+            font-family: 'Poiret One', cursive;
+            color: #ffecd2;
+            padding-right: 30px;
+            padding-left: 30px;
+            margin: 10px;
+            background-color: #563b3b;
+        }
+        a{
+            color: #ffecd2;
+        }
+        .description{
+            bottom: 10px;
+        }
+        .sign{
+            stroke:#ffecd2;
+            stroke-width:15px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 5000;
+        }
+        .urvashi{
+            animation: write1 6s infinite linear;
+        }
+        .dot{
+            animation: write2 6s infinite linear;
+        }
+        .underline{
+            animation: write3 6s infinite linear;
+        }
+        @keyframes write1 {
+            0% {
+                stroke-dashoffset: 5000;
+            }
+            60% {
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes write2 {
+            0%,40% {
+                stroke-dashoffset: 5000;
+            }
+            90% {
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes write3 {
+            0%,50% {
+                stroke-dashoffset: 5000;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="day"><h1>DAY 29</h1><h3>18 AUGUST 2017</h3></div>
+<svg class="content"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3406"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   width="1280"
+   height="960"
+   viewBox="0 0 1280 960"
+   sodipodi:docname="sign2.svg">
+  <metadata
+     id="metadata3412">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3410" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     id="namedview3408"
+     showgrid="false"
+     inkscape:zoom="0.93333333"
+     inkscape:cx="640"
+     inkscape:cy="579.97543"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3406"
+     inkscape:snap-bbox="true" />
+  <path class="sign urvashi"
+     style="fill:none;fill-rule:evenodd;stroke-opacity:1"
+     d="m 278.27183,297.81211 c 0,0 -92.16968,160.15482 -66.2121,220.25746 21.53152,45.29019 82.54032,-18.24173 123.46035,-73.41509 38.58878,-52.03008 68.35866,-104.8387 59.80759,-127.86254 -63.24922,-45.68631 -115.29326,273.47668 -37.25166,207.68239 22.87727,-20.09578 40.97255,-49.52238 42.44317,-60.33401 0.86526,-11.63276 -5.83858,-22.43699 -17.30505,-7.75517 -6.05677,7.75517 6.92202,23.26553 6.92202,23.26553 17.97575,6.43844 48.4136,-4.84698 48.4136,-4.84698 0,0 -27.52245,40.00046 -21.46569,63.26599 6.05677,23.26554 31.02403,7.5 40.5418,-2.19397 9.51778,-9.69397 48.45414,-71.7354 32.87961,-82.39878 -15.57456,-10.66336 -26.74175,31.2757 -25.01124,41.93907 -7.76211,14.01951 10.87343,63.79301 32.25481,68.19192 26.17039,-3.031 53.82828,-65.78549 37.74956,-96.55942 -25.80383,-4.17615 -32.43807,40.47755 5.79883,70.18924 9.02528,0.96491 13.87748,6.38494 26.21773,6.3761 31.50733,-0.0226 65.50272,-12.28779 71.81375,-34.88125 9.59708,-34.35744 -43.26262,-43.62288 -66.62444,-22.29614 -16.57264,15.12897 -19.88894,44.99775 -17.99856,63.57132 12.85977,33.54702 58.10371,3.5476 63.85695,-13.16266 13.84405,-45.56167 -5.96557,-71.65178 -15.57456,-30.05131 -13.15988,56.9734 21.50972,55.97787 35.47536,45.56167 25.2898,-18.86226 46.07599,-67.57887 61.39239,-67.24563 0,0 9.55833,-1.58159 10.42359,46.88829 1.0554,33.68619 -7.2888,31.5984 -13.40203,25.80102 -6.12771,-5.81111 -10.01387,-15.39004 0.0549,-30.85187 16.4398,-21.32674 44.49625,-51.1742 44.49625,-51.1742 8.45323,-14.20603 94.40445,-98.06359 71.81597,-125.05225 -22.61454,-27.01979 -51.91516,53.31685 -57.97192,115.35828 -6.05677,62.04143 -15.86183,125.61371 4.03899,77.14384 19.90081,-48.46986 23.64909,-71.32746 49.60667,-60.66408 25.95758,10.66337 -21.63132,75.61298 -5.19152,83.36816 10.10571,4.76718 42.06513,-15.41121 65.49766,-35.59202 14.68713,-12.64901 19.29407,-27.52949 20.20291,-38.69437 2.59576,-31.8886 -26.70119,-9.0752 -34.48847,12.04071 -9.58948,26.00273 -9.39269,51.58271 -9.39269,51.58271 2.59077,53.59488 45.49002,15.35721 45.49002,15.35721"
+     id="path3499"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccscccsscsssccccsssccssscsccsssssssssc" />
+  <path class="sign dot"
+     style="fill:none;fill-rule:evenodd;stroke-opacity:1"
+     d="m 906.22285,401.72569 c 0,0 -21.47053,-1.98689 -27.73277,27.81621 -1.26805,22.40074 10.03566,22.94328 16.08679,24.89746 16.35408,5.28148 38.56607,-47.41355 13.4352,-45.75963 -18.78672,2.98031 -26.18641,26.76142 -14.31369,33.77685 26.68657,15.76873 43.83567,-0.99345 43.83567,-0.99345"
+     id="path3501"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccscsc" />
+  <path class="sign underline"
+     style="fill:none;fill-rule:evenodd;stroke-opacity:1"
+     d="m 310.71429,648.21429 c 0,0 204.64285,-77.14286 411.42857,-41.78572"
+     id="path3503"
+     inkscape:connector-curvature="0" />
+</svg>
+<div class="description">  
+        <h1>ANIMATED SIGNATURE</h1>
+        <h4>Animating Your Own SVG Signature</h4>
+        <h3><a href="https://webdesign.tutsplus.com/tutorials/sign-on-the-dotted-line-animating-your-own-svg-signature--cms-23846">SOURCE</a></h3>
+    </div>
+
+</body>
+</html>
