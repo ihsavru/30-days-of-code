@@ -135,3 +135,8 @@ Page preloader icon.
 ### 16 August 2017
 #### ACCORDION
 Accordions are useful when you want to toggle between hiding and showing large amount of content.
+
+## DAY 28
+### 17 August 2017
+#### SIDE NAVIGATION BAR
+Navigation bar which slides in from left.
