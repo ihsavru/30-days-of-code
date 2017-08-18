@@ -130,3 +130,8 @@ Tabs are a great way of grouping lots of content into a very small space.
 ### 15 August 2017
 #### PRELOADER
 Page preloader icon.
+
+## DAY 27
+### 16 August 2017
+#### ACCORDION
+Accordions are useful when you want to toggle between hiding and showing large amount of content.

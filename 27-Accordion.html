@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>27-Accordion</title>
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+        body,html{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+        }
+        .content{
+            background-color: rgba(255,255,255,0.8);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            font-family: 'Poiret One', cursive;
+        }
+        button{
+            height: 5vh;
+            width: 50vw;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border: none;
+            font-family: 'Poiret One', cursive;
+            font-size: 30px;
+            cursor: pointer;
+            height: 60px;
+        }
+        #one,#two,#three{
+            height: 0;
+            opacity: 0;
+            width: 50vw;
+            font-size: 20px;
+            color: #243949;
+            text-align: center;
+        }
+        h1{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <button id="section1">DAY</button>
+    <div id="one">
+        27 days out of 30 days of code completed.
+    </div>
+    <button id="section2">DATE</button>
+    <div id="two">
+        16 August 2017
+    </div>
+    <button id="section3">TOPIC</button>
+    <div id="three">
+        <h1>Accordion (Collapsible content)</h1>
+        Accordions are useful when you want to toggle between hiding and showing large amount of content.
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var a = false, b = false, c = false;
+            $('#section1').on('click', function(){
+                if(!a){
+                    $('#one').animate({
+                        height : '10vh',
+                        opacity : '1'
+                    });
+                    a = true;
+                }
+                else{
+                    $('#one').animate({
+                        height : '0',
+                        opacity : '0'
+                    });
+                    a = false;
+                }
+                
+            });
+            $('#section2').on('click', function(){
+                if(!b){
+                    $('#two').animate({
+                        height : '10vh',
+                        opacity : '1'
+                    });
+                    b = true;
+                }
+                else{
+                    $('#two').animate({
+                        height : '0',
+                        opacity : '0'
+                    });
+                    b = false;
+                }
+            });
+            $('#section3').on('click', function(){
+                if(!c){
+                    $('#three').animate({
+                        height : '10vh',
+                        opacity : '1'
+                    });
+                    c = true;
+                }
+                else{
+                    $('#three').animate({
+                        height : '0',
+                        opacity : '0'
+                    });
+                    c = false;
+                }
+            });
+        })
+    </script>
+</body>
+</html>
