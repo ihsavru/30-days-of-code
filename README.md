@@ -145,3 +145,8 @@ Navigation bar which slides in from left.
 ### 18 August 2017
 #### ANIMATED SIGNATURE
 Animating Your Own SVG Signature.
+
+## DAY 30
+### 19 August 2017
+#### ANIMATED CUBE
+Three.js is a lightweight cross-browser JavaScript library/API used to create and display animated 3D computer graphics on a Web browser.
