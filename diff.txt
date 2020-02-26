@@ -1,0 +1,676 @@
+diff --git a/__tests__/pricing_view/__snapshots__/pricing_table.test.js.snap b/__tests__/pricing_view/__snapshots__/pricing_table.test.js.snap
+index cc4f2e67..7c7a3827 100644
+--- a/__tests__/pricing_view/__snapshots__/pricing_table.test.js.snap
++++ b/__tests__/pricing_view/__snapshots__/pricing_table.test.js.snap
+@@ -643,9 +643,8 @@ exports[`Test <PricingTable /> should render Cancel Subscription modal correctly
+       </tr>
+     </tbody>
+   </table>
+-  <Modal
++  <fromRenderProps(Modal)
+     alignment="center"
+-    autoFocus={true}
+     className="modal-container confirm-cancel-form"
+     modalClass="auth-modal"
+     onClose={[Function]}
+@@ -662,7 +661,7 @@ exports[`Test <PricingTable /> should render Cancel Subscription modal correctly
+       className="close-icon"
+       onClick={[Function]}
+     />
+-  </Modal>
++  </fromRenderProps(Modal)>
+ </section>
+ `;
+ 
+diff --git a/__tests__/testcases/__snapshots__/TestcasesResult.test.js.snap b/__tests__/testcases/__snapshots__/TestcasesResult.test.js.snap
+index 4650f4d3..e7c0220c 100644
+--- a/__tests__/testcases/__snapshots__/TestcasesResult.test.js.snap
++++ b/__tests__/testcases/__snapshots__/TestcasesResult.test.js.snap
+@@ -323,8 +323,8 @@ exports[`Test <TestcasesResult /> When type is compile should render with base s
+                           data-attr7={0}
+                           data-automation="compile-field-label-download"
+                           disableWhileLoading={true}
+-                          icon=""
+                           iconAlignment="right"
++                          iconClass=""
+                           loading={false}
+                           onClick={[Function]}
+                           role="link"
+@@ -416,8 +416,8 @@ exports[`Test <TestcasesResult /> When type is compile should render with base s
+                           data-attr7={0}
+                           data-automation="compile-field-label-download"
+                           disableWhileLoading={true}
+-                          icon=""
+                           iconAlignment="right"
++                          iconClass=""
+                           loading={false}
+                           onClick={[Function]}
+                           role="link"
+diff --git a/__tests__/upload/__snapshots__/upload.spec.js.snap b/__tests__/upload/__snapshots__/upload.spec.js.snap
+index 39ac0cf4..4f3122ea 100644
+--- a/__tests__/upload/__snapshots__/upload.spec.js.snap
++++ b/__tests__/upload/__snapshots__/upload.spec.js.snap
+@@ -34,8 +34,8 @@ exports[`Test <Upload /> form should render single file upload button if directo
+     className="ui-btn-line-primary"
+     disableWhileLoading={true}
+     disabled={false}
+-    icon=""
+     iconAlignment="right"
++    iconClass=""
+     loading={false}
+     onClick={[Function]}
+     role="button"
+@@ -65,22 +65,22 @@ exports[`Test <Upload /> form should show upload button with dropdown when direc
+   onOpen={[Function]}
+   open={false}
+ >
+-  <DropdownHandle>
++  <fromRenderProps(DropdownHandle)>
+     <Button
+       aria-haspopup="true"
+       className="ui-btn-line-primary dropdown-button"
+       disableWhileLoading={true}
+       disabled={false}
+-      icon=""
+       iconAlignment="right"
++      iconClass=""
+       loading={false}
+       role="button"
+       size="normal"
+     >
+       Upload
+     </Button>
+-  </DropdownHandle>
+-  <DropdownBody>
++  </fromRenderProps(DropdownHandle)>
++  <fromRenderProps(DropdownBody)>
+     <form
+       encType="multipart/form-data"
+     >
+@@ -133,6 +133,6 @@ exports[`Test <Upload /> form should show upload button with dropdown when direc
+         </li>
+       </ul>
+     </form>
+-  </DropdownBody>
++  </fromRenderProps(DropdownBody)>
+ </Dropdown>
+ `;
+diff --git a/package.json b/package.json
+index cf336060..6563339c 100644
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "shared-components",
+-  "version": "2.3.1",
++  "version": "2.3.2-beta",
+   "description": "Simple React App",
+   "main": "lib/index.js",
+   "files": [
+@@ -42,7 +42,7 @@
+     "prop-types": "^15.6.2",
+     "react": "^16.6.0",
+     "react-dom": "^16.6.0",
+-    "react-select": "git+ssh://git@github.com:interviewstreet/react-select.git#v1.3.1",
++    "react-selectv3": "npm:react-select@3.0.4",
+     "ui-kit": "^2.6.0"
+   },
+   "dependencies": {
+@@ -89,13 +89,13 @@
+     "prop-types": "15.6.2",
+     "react": "16.6.0",
+     "react-addons-shallow-compare": "^15.6.2",
+-    "react-dom": "16.6.0",
+-    "react-meta-tags": "^0.7.1",
+     "react-dnd": "7.4.4",
+     "react-dnd-html5-backend": "7.4.4",
++    "react-dom": "16.6.0",
++    "react-meta-tags": "^0.7.1",
+     "react-redux": "^5.0.7",
+     "react-router": "3.2.0",
+-    "react-select": "git+ssh://git@github.com:interviewstreet/react-select.git#v1.3.1",
++    "react-selectv3": "npm:react-select@3.0.4",
+     "recompose": "^0.30.0",
+     "redux": "^4.0.0",
+     "sass-loader": "7.0.3",
+@@ -105,7 +105,7 @@
+     "style-loader": "^0.13.1",
+     "test-util": "0.1.3",
+     "ui-icons": "0.13.1",
+-    "ui-kit": "2.6.0",
++    "ui-kit": "3.7.0",
+     "webpack": "4.12.0",
+     "webpack-cli": "3.0.3",
+     "webpack-dev-server": "3.1.4",
+diff --git a/yarn.lock b/yarn.lock
+index 3281c1b2..13f08662 100644
+--- a/yarn.lock
++++ b/yarn.lock
+@@ -90,6 +90,13 @@
+   dependencies:
+     "@babel/types" "^7.0.0"
+ 
++"@babel/helper-module-imports@^7.0.0":
++  version "7.0.0"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@babel/helper-module-imports/-/helper-module-imports-7.0.0.tgz#96081b7111e486da4d2cd971ad1a4fe216cc2e3d"
++  integrity sha512-aP/hlLq01DWNEiDg4Jn23i+CXxW/owM4WpDLFUbpjxe4NS3BhLVZQ5i7E0ZrxuQ/vwekIeciyamgB1UIYxxM6A==
++  dependencies:
++    "@babel/types" "^7.0.0"
++
+ "@babel/helper-split-export-declaration@7.0.0-beta.44":
+   version "7.0.0-beta.44"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.44.tgz#c0b351735e0fbcb3822c8ad8db4e583b05ebd9dc"
+@@ -136,6 +143,14 @@
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@babel/parser/-/parser-7.3.4.tgz#a43357e4bbf4b92a437fb9e465c192848287f27c"
+   integrity sha512-tXZCqWtlOOP4wgCp6RjRvLmfuhnqTLy9VHwRochJBCP2nDm27JnnuFEnXFASVyQNHk36jD1tAammsCEEqgscIQ==
+ 
++"@babel/polyfill@7.2.5":
++  version "7.2.5"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@babel/polyfill/-/polyfill-7.2.5.tgz#6c54b964f71ad27edddc567d065e57e87ed7fa7d"
++  integrity sha512-8Y/t3MWThtMLYr0YNC/Q76tqN1w30+b0uQMeFUYauG2UGTR19zyUtFrAzT23zNtBxPp+LbE5E/nwV/q/r3y6ug==
++  dependencies:
++    core-js "^2.5.7"
++    regenerator-runtime "^0.12.0"
++
+ "@babel/runtime@^7.0.0":
+   version "7.1.2"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@babel/runtime/-/runtime-7.1.2.tgz#81c89935f4647706fc54541145e6b4ecfef4b8e3"
+@@ -143,6 +158,13 @@
+   dependencies:
+     regenerator-runtime "^0.12.0"
+ 
++"@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.4":
++  version "7.5.5"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
++  integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
++  dependencies:
++    regenerator-runtime "^0.13.2"
++
+ "@babel/template@7.0.0-beta.44":
+   version "7.0.0-beta.44"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
+@@ -211,6 +233,83 @@
+     lodash "^4.17.11"
+     to-fast-properties "^2.0.0"
+ 
++"@emotion/cache@^10.0.15", "@emotion/cache@^10.0.9":
++  version "10.0.15"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/cache/-/cache-10.0.15.tgz#b81767b48015aae2689c60373992145c67b8de02"
++  integrity sha512-8VthgeKhlGeTXSW1JN7I14AnAaiFPbOrqNqg3dPoGCZ3bnMjkrmRU0zrx0BtBw9esBaPaQgDB9y0tVgAGT2Mrg==
++  dependencies:
++    "@emotion/sheet" "0.9.3"
++    "@emotion/stylis" "0.8.4"
++    "@emotion/utils" "0.11.2"
++    "@emotion/weak-memoize" "0.2.3"
++
++"@emotion/core@^10.0.9":
++  version "10.0.15"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/core/-/core-10.0.15.tgz#b8489d85d64b45bd03abdb8a3d9639ba8a0328d0"
++  integrity sha512-VHwwl3k/ddMfQOHYgOJryXOs2rGJ5AfKLQGm5AVolNonnr6tkmDI4nzIMNaPpveoXVs7sP0OrF24UunIPxveQw==
++  dependencies:
++    "@babel/runtime" "^7.4.3"
++    "@emotion/cache" "^10.0.15"
++    "@emotion/css" "^10.0.14"
++    "@emotion/serialize" "^0.11.9"
++    "@emotion/sheet" "0.9.3"
++    "@emotion/utils" "0.11.2"
++
++"@emotion/css@^10.0.14", "@emotion/css@^10.0.9":
++  version "10.0.14"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/css/-/css-10.0.14.tgz#95dacabdd0e22845d1a1b0b5968d9afa34011139"
++  integrity sha512-MozgPkBEWvorcdpqHZE5x1D/PLEHUitALQCQYt2wayf4UNhpgQs2tN0UwHYS4FMy5ROBH+0ALyCFVYJ/ywmwlg==
++  dependencies:
++    "@emotion/serialize" "^0.11.8"
++    "@emotion/utils" "0.11.2"
++    babel-plugin-emotion "^10.0.14"
++
++"@emotion/hash@0.7.2":
++  version "0.7.2"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/hash/-/hash-0.7.2.tgz#53211e564604beb9befa7a4400ebf8147473eeef"
++  integrity sha512-RMtr1i6E8MXaBWwhXL3yeOU8JXRnz8GNxHvaUfVvwxokvayUY0zoBeWbKw1S9XkufmGEEdQd228pSZXFkAln8Q==
++
++"@emotion/memoize@0.7.2":
++  version "0.7.2"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/memoize/-/memoize-0.7.2.tgz#7f4c71b7654068dfcccad29553520f984cc66b30"
++  integrity sha512-hnHhwQzvPCW1QjBWFyBtsETdllOM92BfrKWbUTmh9aeOlcVOiXvlPsK4104xH8NsaKfg86PTFsWkueQeUfMA/w==
++
++"@emotion/serialize@^0.11.8", "@emotion/serialize@^0.11.9":
++  version "0.11.9"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/serialize/-/serialize-0.11.9.tgz#123e0f51d2dee9693fae1057bd7fc27b021d6868"
++  integrity sha512-/Cn4V81z3ZyFiDQRw8nhGFaHkxHtmCSSBUit4vgTuLA1BqxfJUYiqSq97tq/vV8z9LfIoqs6a9v6QrUFWZpK7A==
++  dependencies:
++    "@emotion/hash" "0.7.2"
++    "@emotion/memoize" "0.7.2"
++    "@emotion/unitless" "0.7.4"
++    "@emotion/utils" "0.11.2"
++    csstype "^2.5.7"
++
++"@emotion/sheet@0.9.3":
++  version "0.9.3"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/sheet/-/sheet-0.9.3.tgz#689f135ecf87d3c650ed0c4f5ddcbe579883564a"
++  integrity sha512-c3Q6V7Df7jfwSq5AzQWbXHa5soeE4F5cbqi40xn0CzXxWW9/6Mxq48WJEtqfWzbZtW9odZdnRAkwCQwN12ob4A==
++
++"@emotion/stylis@0.8.4":
++  version "0.8.4"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/stylis/-/stylis-0.8.4.tgz#6c51afdf1dd0d73666ba09d2eb6c25c220d6fe4c"
++  integrity sha512-TLmkCVm8f8gH0oLv+HWKiu7e8xmBIaokhxcEKPh1m8pXiV/akCiq50FvYgOwY42rjejck8nsdQxZlXZ7pmyBUQ==
++
++"@emotion/unitless@0.7.4":
++  version "0.7.4"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/unitless/-/unitless-0.7.4.tgz#a87b4b04e5ae14a88d48ebef15015f6b7d1f5677"
++  integrity sha512-kBa+cDHOR9jpRJ+kcGMsysrls0leukrm68DmFQoMIWQcXdr2cZvyvypWuGYT7U+9kAExUE7+T7r6G3C3A6L8MQ==
++
++"@emotion/utils@0.11.2":
++  version "0.11.2"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/utils/-/utils-0.11.2.tgz#713056bfdffb396b0a14f1c8f18e7b4d0d200183"
++  integrity sha512-UHX2XklLl3sIaP6oiMmlVzT0J+2ATTVpf0dHQVyPJHTkOITvXfaSqnRk6mdDhV9pR8T/tHc3cex78IKXssmzrA==
++
++"@emotion/weak-memoize@0.2.3":
++  version "0.2.3"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@emotion/weak-memoize/-/weak-memoize-0.2.3.tgz#dfa0c92efe44a1d1a7974fb49ffeb40ef2da5a27"
++  integrity sha512-zVgvPwGK7c1aVdUVc9Qv7SqepOGRDrqCw7KZPSZziWGxSlbII3gmvGLPzLX4d0n0BMbamBacUrN22zOMyFFEkQ==
++
+ "@mrmlnc/readdir-enhanced@^2.2.1":
+   version "2.2.1"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
+@@ -1322,6 +1421,22 @@ babel-plugin-check-es2015-constants@^6.22.0:
+   dependencies:
+     babel-runtime "^6.22.0"
+ 
++babel-plugin-emotion@^10.0.14:
++  version "10.0.15"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-plugin-emotion/-/babel-plugin-emotion-10.0.15.tgz#2ce5bea191331ef65b3b9ae212a8f0e46ff97616"
++  integrity sha512-E3W68Zk8EcKpRUDW2tsFKi4gsavapMRjfr2/KKgG3l7l2zZpiKk0BxB59Ul9C0w0ekv6my/ylGOk2WroaqKXPw==
++  dependencies:
++    "@babel/helper-module-imports" "^7.0.0"
++    "@emotion/hash" "0.7.2"
++    "@emotion/memoize" "0.7.2"
++    "@emotion/serialize" "^0.11.9"
++    babel-plugin-macros "^2.0.0"
++    babel-plugin-syntax-jsx "^6.18.0"
++    convert-source-map "^1.5.0"
++    escape-string-regexp "^1.0.5"
++    find-root "^1.1.0"
++    source-map "^0.5.7"
++
+ babel-plugin-istanbul@^4.1.6:
+   version "4.1.6"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-plugin-istanbul/-/babel-plugin-istanbul-4.1.6.tgz#36c59b2192efce81c5b378321b74175add1c9a45"
+@@ -1337,6 +1452,15 @@ babel-plugin-jest-hoist@^23.2.0:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-23.2.0.tgz#e61fae05a1ca8801aadee57a6d66b8cefaf44167"
+   integrity sha1-5h+uBaHKiAGq3uV6bWa4zvr0QWc=
+ 
++babel-plugin-macros@^2.0.0:
++  version "2.6.1"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-plugin-macros/-/babel-plugin-macros-2.6.1.tgz#41f7ead616fc36f6a93180e89697f69f51671181"
++  integrity sha512-6W2nwiXme6j1n2erPOnmRiWfObUhWH7Qw1LMi9XZy8cj+KtESu3T6asZvtk5bMQQjX8te35o7CFueiSdL/2NmQ==
++  dependencies:
++    "@babel/runtime" "^7.4.2"
++    cosmiconfig "^5.2.0"
++    resolve "^1.10.0"
++
+ babel-plugin-minify-builtins@^0.3.0:
+   version "0.3.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-plugin-minify-builtins/-/babel-plugin-minify-builtins-0.3.0.tgz#4740117a6a784063aaf8f092989cf9e4bd484860"
+@@ -1490,7 +1614,7 @@ babel-plugin-syntax-function-bind@^6.8.0:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-plugin-syntax-function-bind/-/babel-plugin-syntax-function-bind-6.13.0.tgz#48c495f177bdf31a981e732f55adc0bdd2601f46"
+   integrity sha1-SMSV8Xe98xqYHnMvVa3AvdJgH0Y=
+ 
+-babel-plugin-syntax-jsx@^6.3.13, babel-plugin-syntax-jsx@^6.8.0:
++babel-plugin-syntax-jsx@^6.18.0, babel-plugin-syntax-jsx@^6.3.13, babel-plugin-syntax-jsx@^6.8.0:
+   version "6.18.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
+   integrity sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=
+@@ -1948,15 +2072,6 @@ babel-plugin-transform-undefined-to-void@^6.9.0:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-plugin-transform-undefined-to-void/-/babel-plugin-transform-undefined-to-void-6.9.4.tgz#be241ca81404030678b748717322b89d0c8fe280"
+   integrity sha1-viQcqBQEAwZ4t0hxcyK4nQyP4oA=
+ 
+-babel-polyfill@6.23.0:
+-  version "6.23.0"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-polyfill/-/babel-polyfill-6.23.0.tgz#8364ca62df8eafb830499f699177466c3b03499d"
+-  integrity sha1-g2TKYt+Or7gwSZ9pkXdGbDsDSZ0=
+-  dependencies:
+-    babel-runtime "^6.22.0"
+-    core-js "^2.4.0"
+-    regenerator-runtime "^0.10.0"
+-
+ babel-polyfill@^6.26.0:
+   version "6.26.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
+@@ -2199,11 +2314,6 @@ babel-runtime@6.x, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6
+     core-js "^2.4.0"
+     regenerator-runtime "^0.11.0"
+ 
+-babel-standalone@^6.26.0:
+-  version "6.26.0"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-standalone/-/babel-standalone-6.26.0.tgz#15fb3d35f2c456695815ebf1ed96fe7f015b6886"
+-  integrity sha1-Ffs9NfLEVmlYFevx7Zb+fwFbaIY=
+-
+ babel-template@^6.16.0, babel-template@^6.24.1, babel-template@^6.26.0, babel-template@^6.3.0:
+   version "6.26.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/babel-template/-/babel-template-6.26.0.tgz#de03e2d16396b069f46dd9fff8521fb1a0e35e02"
+@@ -3077,7 +3187,7 @@ class-utils@^0.3.5:
+     isobject "^3.0.0"
+     static-extend "^0.1.1"
+ 
+-classnames@2.2.6, classnames@2.x, classnames@^2.2.4, classnames@^2.2.5, classnames@^2.2.6:
++classnames@2.2.6, classnames@2.x, classnames@^2.2.5, classnames@^2.2.6:
+   version "2.2.6"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+@@ -3197,11 +3307,6 @@ code-point-at@^1.0.0:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
+   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
+ 
+-codemirror@^5.30.0:
+-  version "5.45.0"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/codemirror/-/codemirror-5.45.0.tgz#db5ebbb3bf44028c684053f3954d011efcec27ad"
+-  integrity sha512-c19j644usCE8gQaXa0jqn2B/HN9MnB2u6qPIrrhrMkB+QAP42y8G4QnTwuwbVSoUS1jEl7JU9HZMGhCDL0nsAw==
+-
+ "codemod-proptypes-to-flow@git+ssh://git@github.com:interviewstreet/codemod-proptypes-to-flow#v1.0.1":
+   version "1.0.1"
+   resolved "git+ssh://git@github.com:interviewstreet/codemod-proptypes-to-flow#c210a3b484394899358858e9e7a02c9b85bd688d"
+@@ -3339,17 +3444,6 @@ component-indexof@0.0.3:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/component-indexof/-/component-indexof-0.0.3.tgz#11d091312239eb8f32c8f25ae9cb002ffe8d3c24"
+   integrity sha1-EdCRMSI5648yyPJa6csAL/6NPCQ=
+ 
+-component-playground@^3.1.2:
+-  version "3.2.1"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/component-playground/-/component-playground-3.2.1.tgz#8616e95c0e9a4f05cb335dd44afc7bc195eedd76"
+-  integrity sha512-XVixY8Lzicq2UIy4cXvkomS5oP0xozH8GtHaCReuIHsFhirMjd2wh8N+DutN+LjJ4HCom8G11aTD5BcErmbGfw==
+-  dependencies:
+-    babel-polyfill "^6.26.0"
+-    babel-standalone "^6.26.0"
+-    codemirror "^5.30.0"
+-    prop-types "^15.6.0"
+-    react-codemirror2 "^5.0.0"
+-
+ compressible@~2.0.14:
+   version "2.0.14"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/compressible/-/compressible-2.0.14.tgz#326c5f507fbb055f54116782b969a81b67a29da7"
+@@ -3515,13 +3609,6 @@ copy-descriptor@^0.1.0:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
+   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
+ 
+-copy-to-clipboard@^3.0.8:
+-  version "3.0.8"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/copy-to-clipboard/-/copy-to-clipboard-3.0.8.tgz#f4e82f4a8830dce4666b7eb8ded0c9bcc313aba9"
+-  integrity sha512-c3GdeY8qxCHGezVb1EFQfHYK/8NZRemgcTIzPq7PuxjHAf/raKibn2QdhHPb/y6q74PMgH6yizaDZlRmw6QyKw==
+-  dependencies:
+-    toggle-selection "^1.0.3"
+-
+ core-js@2.5.7, core-js@^2.4.0, core-js@^2.5.0:
+   version "2.5.7"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
+@@ -3537,6 +3624,11 @@ core-js@^1.0.0:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
+   integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
+ 
++core-js@^2.5.7:
++  version "2.6.9"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
++  integrity sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
++
+ core-util-is@1.0.2, core-util-is@~1.0.0:
+   version "1.0.2"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
+@@ -3563,6 +3655,16 @@ cosmiconfig@^5.0.0:
+     lodash.get "^4.4.2"
+     parse-json "^4.0.0"
+ 
++cosmiconfig@^5.2.0:
++  version "5.2.1"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/cosmiconfig/-/cosmiconfig-5.2.1.tgz#040f726809c591e77a17c0a3626ca45b4f168b1a"
++  integrity sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==
++  dependencies:
++    import-fresh "^2.0.0"
++    is-directory "^0.3.1"
++    js-yaml "^3.13.1"
++    parse-json "^4.0.0"
++
+ create-ecdh@^4.0.0:
+   version "4.0.3"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/create-ecdh/-/create-ecdh-4.0.3.tgz#c9111b6f33045c4697f144787f9254cdc77c45ff"
+@@ -3829,6 +3931,11 @@ csstype@^2.2.0:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/csstype/-/csstype-2.6.3.tgz#b701e5968245bf9b08d54ac83d00b624e622a9fa"
+   integrity sha512-rINUZXOkcBmoHWEyu7JdHu5JMzkGRoMX4ov9830WNgxf5UYxcBUO0QTKAqeJ5EZfSdlrcJYkC8WwfVW7JYi4yg==
+ 
++csstype@^2.5.7:
++  version "2.6.6"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/csstype/-/csstype-2.6.6.tgz#c34f8226a94bbb10c32cc0d714afdf942291fc41"
++  integrity sha512-RpFbQGUE74iyPgvr46U9t1xoQBM8T4BL8SxrN66Le2xYAPSaDJJKeztV3awugusb3g3G9iL8StmkBBXhcbbXhg==
++
+ currently-unhandled@^0.4.1:
+   version "0.4.1"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
+@@ -4300,6 +4407,13 @@ documentation@8.0.0:
+     vue-template-compiler "^2.5.16"
+     yargs "^9.0.1"
+ 
++dom-helpers@^3.4.0:
++  version "3.4.0"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
++  integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
++  dependencies:
++    "@babel/runtime" "^7.1.2"
++
+ dom-serializer@0, dom-serializer@~0.1.0:
+   version "0.1.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/dom-serializer/-/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
+@@ -5321,6 +5435,11 @@ find-cache-dir@^1.0.0:
+     make-dir "^1.0.0"
+     pkg-dir "^2.0.0"
+ 
++find-root@^1.1.0:
++  version "1.1.0"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/find-root/-/find-root-1.1.0.tgz#abcfc8ba76f708c42a97b3d685b7e9450bfb9ce4"
++  integrity sha512-NKfW6bec6GfKc0SGx1e07QZY9PE99u0Bft/0rzSD5k3sO/vwkVUpDUKVm5Gpp5Ue3YfShPFTX2070tDs5kB9Ng==
++
+ find-up@^1.0.0:
+   version "1.1.2"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/find-up/-/find-up-1.1.2.tgz#6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f"
+@@ -7659,6 +7778,14 @@ js-yaml@^3.12.0:
+     argparse "^1.0.7"
+     esprima "^4.0.0"
+ 
++js-yaml@^3.13.1:
++  version "3.13.1"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
++  integrity sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
++  dependencies:
++    argparse "^1.0.7"
++    esprima "^4.0.0"
++
+ js-yaml@~3.7.0:
+   version "3.7.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/js-yaml/-/js-yaml-3.7.0.tgz#5c967ddd837a9bfdca5f2de84253abe8a1c03b80"
+@@ -8491,6 +8618,11 @@ memoize-one@^4.0.2:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/memoize-one/-/memoize-one-4.0.2.tgz#3fb8db695aa14ab9c0f1644e1585a8806adc1aee"
+   integrity sha512-ucx2DmXTeZTsS4GPPUZCbULAN7kdPT1G+H49Y34JjbQ5ESc6OGhVxKvb1iKhr9v19ZB9OtnHwNnhUnNR/7Wteg==
+ 
++memoize-one@^5.0.0:
++  version "5.0.5"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/memoize-one/-/memoize-one-5.0.5.tgz#8cd3809555723a07684afafcd6f756072ac75d7e"
++  integrity sha512-ey6EpYv0tEaIbM/nTDOpHciXUvd+ackQrJgEzBwemhZZIWZjcyodqEcrmqDy2BKRTM3a65kKBV4WtLXJDt26SQ==
++
+ memory-fs@^0.2.0:
+   version "0.2.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/memory-fs/-/memory-fs-0.2.0.tgz#f2bb25368bc121e391c2520de92969caee0a0290"
+@@ -10839,10 +10971,10 @@ rc-animate@2.x:
+     raf "^3.4.0"
+     react-lifecycles-compat "^3.0.4"
+ 
+-rc-notification@^3.1.1:
+-  version "3.3.1"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/rc-notification/-/rc-notification-3.3.1.tgz#0baa3e70f8d40ab015ce8fa78c260c490fc7beb4"
+-  integrity sha512-U5+f4BmBVfMSf3OHSLyRagsJ74yKwlrQAtbbL5ijoA0F2C60BufwnOcHG18tVprd7iaIjzZt1TKMmQSYSvgrig==
++rc-notification@3.3.0:
++  version "3.3.0"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/rc-notification/-/rc-notification-3.3.0.tgz#af74fe7fc9ee4040eaa5e72dbd6d4088a3ecae2d"
++  integrity sha512-T7wUryaKTNTO9gsWPCwRyC9P4FcKFTrIRsiNVXJhjlRbHKT0xZF3ag/gxXxZzPBDAf0l1vfgIrT+11cfWtZW0g==
+   dependencies:
+     babel-runtime "6.x"
+     classnames "2.x"
+@@ -10882,11 +11014,6 @@ react-click-outside@tj/react-click-outside:
+   version "1.1.1"
+   resolved "https://codeload.github.com/tj/react-click-outside/tar.gz/a833ddc5be47490307f9fcc6ed09d8c353108510"
+ 
+-react-codemirror2@^5.0.0:
+-  version "5.1.0"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/react-codemirror2/-/react-codemirror2-5.1.0.tgz#62de4460178adea40eb52eabf7491669bf3794b8"
+-  integrity sha512-Cksbgbviuf2mJfMyrKmcu7ycK6zX/ukuQO8dvRZdFWqATf5joalhjFc6etnBdGCcPA2LbhIwz+OPnQxLN/j1Fw==
+-
+ react-dates@15.1.0:
+   version "15.1.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/react-dates/-/react-dates-15.1.0.tgz#0f0aaa0614d096aa38c928234f9ec25bc6fe9391"
+@@ -10921,16 +11048,6 @@ react-dnd@7.4.4:
+     invariant "^2.1.0"
+     shallowequal "^1.1.0"
+ 
+-react-dom@16.3.1:
+-  version "16.3.1"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/react-dom/-/react-dom-16.3.1.tgz#6a3c90a4fb62f915bdbcf6204422d93a7d4ca573"
+-  integrity sha512-2Infg89vzahq8nfVi1GkjPqq0vrBvf0f3T0+dTtyjq4f6HKOqKixAK25Vr593O3QTx4kw/vmUtAJwerlevNWOA==
+-  dependencies:
+-    fbjs "^0.8.16"
+-    loose-envify "^1.1.0"
+-    object-assign "^4.1.1"
+-    prop-types "^15.6.0"
+-
+ react-dom@16.4.0:
+   version "16.4.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/react-dom/-/react-dom-16.4.0.tgz#099f067dd5827ce36a29eaf9a6cdc7cbf6216b1e"
+@@ -10963,7 +11080,7 @@ react-image-crop@6.0.9:
+   dependencies:
+     "@types/react-image-crop" "^3.0.1"
+ 
+-react-input-autosize@^2.1.2:
++react-input-autosize@^2.2.1:
+   version "2.2.1"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/react-input-autosize/-/react-input-autosize-2.2.1.tgz#ec428fa15b1592994fb5f9aa15bb1eb6baf420f8"
+   integrity sha512-3+K4CD13iE4lQQ2WlF8PuV5htfmTRLH6MDnfndHM6LuBRszuXnuyIfE7nhSKt8AzRBZ50bu0sAhkNMeS5pxQQA==
+@@ -11054,13 +11171,21 @@ react-router@3.2.0:
+     prop-types "^15.5.6"
+     warning "^3.0.0"
+ 
+-"react-select@git+ssh://git@github.com:interviewstreet/react-select.git#v1.3.1":
+-  version "1.3.1"
+-  resolved "git+ssh://git@github.com:interviewstreet/react-select.git#5531fa96b18a21a8b1e9af7d5af2c40d5cf2e662"
++"react-selectv3@npm:react-select@3.0.4":
++  version "3.0.4"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/react-select/-/react-select-3.0.4.tgz#16bde37c24fd4f6444914d4681e78f15ffbc86d3"
++  integrity sha512-fbVISKa/lSUlLsltuatfUiKcWCNvdLXxFFyrzVQCBUsjxJZH/m7UMPdw/ywmRixAmwXAP++MdbNNZypOsiDEfA==
+   dependencies:
+-    classnames "^2.2.4"
+-    prop-types "^15.5.8"
+-    react-input-autosize "^2.1.2"
++    "@babel/runtime" "^7.4.4"
++    "@emotion/cache" "^10.0.9"
++    "@emotion/core" "^10.0.9"
++    "@emotion/css" "^10.0.9"
++    classnames "^2.2.5"
++    memoize-one "^5.0.0"
++    prop-types "^15.6.0"
++    raf "^3.4.0"
++    react-input-autosize "^2.2.1"
++    react-transition-group "^2.2.1"
+ 
+ react-tag-input@6.4.0:
+   version "6.4.0"
+@@ -11083,13 +11208,15 @@ react-test-renderer@^16.0.0-0:
+     react-is "^16.5.2"
+     schedule "^0.5.0"
+ 
+-react-tooltip@3.4.0:
+-  version "3.4.0"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/react-tooltip/-/react-tooltip-3.4.0.tgz#037f38f797c3e6b1b58d2534ccc8c2c76af4f52d"
+-  integrity sha1-A38495fD5rG1jSU0zMjCx2r09S0=
++react-transition-group@^2.2.1:
++  version "2.9.0"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"
++  integrity sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==
+   dependencies:
+-    classnames "^2.2.5"
+-    prop-types "^15.6.0"
++    dom-helpers "^3.4.0"
++    loose-envify "^1.4.0"
++    prop-types "^15.6.2"
++    react-lifecycles-compat "^3.0.4"
+ 
+ react-with-direction@^1.1.0:
+   version "1.3.0"
+@@ -11352,7 +11479,7 @@ regenerate@^1.2.1:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
+   integrity sha512-1G6jJVDWrt0rK99kBjvEtziZNCICAuvIPkSiUFIQxVP06RCVpq3dmDo2oi6ABpYaDYaTRr67BEhL8r1wgEZZKg==
+ 
+-regenerator-runtime@^0.10.0, regenerator-runtime@^0.10.5:
++regenerator-runtime@^0.10.5:
+   version "0.10.5"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
+   integrity sha1-M2w+/BIgrc7dosn6tntaeVWjNlg=
+@@ -11367,6 +11494,11 @@ regenerator-runtime@^0.12.0:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
+   integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+ 
++regenerator-runtime@^0.13.2:
++  version "0.13.3"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/regenerator-runtime/-/regenerator-runtime-0.13.3.tgz#7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
++  integrity sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
++
+ regenerator-transform@^0.10.0:
+   version "0.10.1"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/regenerator-transform/-/regenerator-transform-0.10.1.tgz#1e4996837231da8b7f3cf4114d71b5691a0680dd"
+@@ -11746,6 +11878,13 @@ resolve@^1.1.3, resolve@^1.1.6, resolve@^1.4.0:
+   dependencies:
+     path-parse "^1.0.5"
+ 
++resolve@^1.10.0:
++  version "1.12.0"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/resolve/-/resolve-1.12.0.tgz#3fc644a35c84a48554609ff26ec52b66fa577df6"
++  integrity sha512-B/dOmuoAik5bKcD6s6nXDCjzUKnaDvdkRyAk6rsmsKLipWj4797iothd7jmmUhWTfinVMU+wc56rYKsit2Qy4w==
++  dependencies:
++    path-parse "^1.0.6"
++
+ resolve@^1.3.2:
+   version "1.10.0"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/resolve/-/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
+@@ -13180,11 +13319,6 @@ to-through@^2.0.0:
+   dependencies:
+     through2 "^2.0.3"
+ 
+-toggle-selection@^1.0.3:
+-  version "1.0.6"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/toggle-selection/-/toggle-selection-1.0.6.tgz#6e45b1263f2017fa0acc7d89d78b15b8bf77da32"
+-  integrity sha1-bkWxJj8gF/oKzH2J14sVuL932jI=
+-
+ tough-cookie@>=2.3.3, tough-cookie@^2.3.4, tough-cookie@~2.4.3:
+   version "2.4.3"
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/tough-cookie/-/tough-cookie-2.4.3.tgz#53f36da3f47783b0925afa06ff9f3b165280f781"
+@@ -13356,21 +13490,16 @@ ui-icons@0.13.1:
+   resolved "https://nexus.hackerrank.com/repository/hr-npm-group/ui-icons/-/ui-icons-0.13.1.tgz#bd72433c030819c0d6c3cc0d4e788464089fd153"
+   integrity sha512-lqT5YZWBXlZTSOtUTYIbJtsg6k3XZpcI6SfoTk8LbSpliJxEMFUvXfOs9KG5kfvL+yix5CggvziywYVxG70spg==
+ 
+-ui-kit@2.6.0:
+-  version "2.6.0"
+-  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/ui-kit/-/ui-kit-2.6.0.tgz#57296de9fbde8be7e238737ea105d6784e811e79"
+-  integrity sha512-mffnr5HN8NUi1DJnHcp8sutw4STYgjMsHdLpqQ/wvUUPcygGmsVR3gi0ZRnEtcoSfgnhPm1fKN0aIZScdeLNFA==
++ui-kit@3.7.0:
++  version "3.7.0"
++  resolved "https://nexus.hackerrank.com/repository/hr-npm-group/ui-kit/-/ui-kit-3.7.0.tgz#6d72dede6d233cacfa730e2d65f2b06cebe5ddb6"
++  integrity sha512-7noWVALZwW93MSqhS1OVL37SwEQQXOCc6Z+tEBYZzbHUs7IXvqlEnR9r4iAo76wIvousaVeWOGjtwM+WU52cXw==
+   dependencies:
+-    babel-polyfill "6.23.0"
++    "@babel/polyfill" "7.2.5"
+     bootstrap "4.0.0-alpha.6"
+-    component-playground "^3.1.2"
+-    copy-to-clipboard "^3.0.8"
+-    rc-notification "^3.1.1"
+-    react "16.3.1"
++    rc-notification "3.3.0"
+     react-click-outside tj/react-click-outside
+     react-dates "15.1.0"
+-    react-dom "16.3.1"
+-    react-tooltip "3.4.0"
+ 
+ uid-number@^0.0.6:
+   version "0.0.6"
