@@ -1,6 +1,5 @@
 # 30-days-of-code
-A code challenge where I code everyday for a month and learn new design tricks/animations everyday!
-
+A coding challenge inspired by Jennifer Dewalt where I am going to code every day for 30 days from July 21, 2017 to August 19,2017.
 ## DAY 1
 ### 21 July 2017
 #### THE PARALLAX SCROLLING EFFECT
